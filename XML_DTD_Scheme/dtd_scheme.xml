@@ -1,0 +1,7 @@
+<!ELEMENT Cities (City+)>
+<!ELEMENT City (CityID, CityName, Country)>
+<!ELEMENT CityID (#PCDATA)>
+<!ELEMENT CityName (#PCDATA)>
+<!ELEMENT Country (CountryID, CountryName)>
+<!ELEMENT CountryID (#PCDATA)>
+<!ELEMENT CountryName (#PCDATA)>

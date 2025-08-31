@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+  <xsl:template match="/">
+    <html>
+      <body>
+        <p>Total Cities: <xsl:value-of select="count(Cities/City)"/></p>
+
+        <xsl:for-each select="Cities/City">
+          <xsl:sort select="CityName"/>
+
+          <xsl:if test="Country">
+            <p>
+              City Number: <xsl:number/><br/>
+              City Name: <xsl:value-of select="CityName"/><br/>
+              Country Name: <xsl:value-of select="Country/CountryName"/>
+            </p>
+          </xsl:if>
+        </xsl:for-each>
+      </body>
+    </html>
+  </xsl:template>
+</xsl:stylesheet>

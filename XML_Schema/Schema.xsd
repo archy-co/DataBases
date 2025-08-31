@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <xsd:element name="CountryName" type="xsd:string"/>
+  <xsd:element name="CityName" type="xsd:string"/>
+
+  <xsd:element name="CountryID">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+
+  <xsd:element name="CityID">
+    <xsd:simpleType>
+      <xsd:restriction base="xsd:integer">
+        <xsd:minInclusive value="1"/>
+      </xsd:restriction>
+    </xsd:simpleType>
+  </xsd:element>
+
+
+  <xsd:element name="Cities">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="City" maxOccurs="unbounded"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="City">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="CityID"/>
+        <xsd:element ref="CityName"/>
+        <xsd:element ref="Country"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="Country">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="CountryID"/>
+        <xsd:element ref="CountryName"/>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
